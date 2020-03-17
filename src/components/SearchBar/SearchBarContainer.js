@@ -2,11 +2,13 @@
 import React from "react";
 import "./SearchBar.css";
 
+const insWord = "Instagram";
+
 const SearchBar = () => {
   return (
     <div className="search-bar-wrapper">
       <div className="image-wrapper">
-        <i className="fab fa-instagram" />
+        <i className="fab fa-instagram fa-1x" />{insWord}
       </div>
       <form className="search-form">
         <input

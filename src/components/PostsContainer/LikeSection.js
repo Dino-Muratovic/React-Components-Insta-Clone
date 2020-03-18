@@ -6,11 +6,13 @@ import React, {useState} from "react";
 const LikeSection = props => {
 
 
-  const likeName = "Likes"
-  const [likes, setLikes] = useState(0);
+  // const likeName = "Likes";
+  const [likes, setLikes] = useState(props.likes);
+
   const incrementLikes = function (){
     setLikes(likes + 1);    
   }
+  console.log(`this is likes `, likes);
   
 
   return (
@@ -19,15 +21,15 @@ const LikeSection = props => {
       className="like-section"
       key="likes-icons-container"
     >
-      <div className="like-section-wrapper">
+      <div className="like-section-wrapper" onClick={incrementLikes}>
         <i className="far fa-heart" />
       </div>
       <div className="like-section-wrapper">
-        <i className="far fa-comment" onClick={incrementLikes}/>
-        {likes}
+        <i className="far fa-comment"/>
+        
       </div>
     </div>
-    <p className="like-number">{likeName}</p>
+    <p className="like-number">{likes} likes</p>
 </div>
 
   )
